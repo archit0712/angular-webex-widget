@@ -5,33 +5,38 @@ declare var webex: any;
 @Component({
   selector: 'app-webex-widget',
   templateUrl: './webex-widget.component.html',
-  styleUrls: ['./webex-widget.component.css']
+  styleUrls: ['./webex-widget.component.css'],
 })
 export class WebexWidgetComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     var el = document.createElement('script');
     el.onload = () => {
-
       var widgetEl = document.getElementById('my-webex-widget');
 
       webex.widget(widgetEl).spaceWidget({
-        accessToken: 'ZWFhYzk1ZDAtZWNlZS00MTVhLWJmZjMtY2MxY2I5YWYwMTAwZTMyMzIwODItZmFj_PF84_3a3c279d-f61d-4690-9800-4020b8fd7511',
-        destinationId: 'abuzzi@cisco.com',
+        accessToken:
+          'MGYxNjE5MjYtZDVkNS00YWFjLWE4ZTQtNmI2MTkyMjI4NjA4OTVjN2Y5M2UtYTYw_P0A1_4f5586f0-3d94-4079-b73f-850055a38a9d',
+        destinationId: 'mittalarc2001@gmail.com',
         destinationType: 'email',
-        spaceActivities: {"files":true,"meet":true,"message":true,"people":true},
-        initialActivity: 'message',
+        spaceActivities: {
+          files: true,
+          meet: true,
+          message: true,
+          people: true,
+        },
+        initialActivity: 'people',
         secondaryActivitiesFullWidth: false,
-        composerActions: {"files":true,"meet":true,"message":true,"people":true}
+        composerActions: {
+          files: true,
+          meet: true,
+          message: true,
+          people: true,
+        },
       });
-
-
     };
-    el.src = "https://code.s4d.io/widget-space/production/bundle.js";
+    el.src = 'https://code.s4d.io/widget-space/production/bundle.js';
     document.getElementsByTagName('head')[0].append(el);
-
   }
-
 }
